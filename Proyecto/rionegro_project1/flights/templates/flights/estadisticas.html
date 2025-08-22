@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas de Vuelos</title>
+     <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 50px auto; }
+        h1 { text-align: center; }
+        .stat { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link { display: block; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Estadísticas de Vuelos</h1>
+    
+    <div class="stat">
+        <h2>Conteo de Vuelos por Tipo</h2>
+        <p>
+            Existen <strong>{{ num_nacionales }}</strong> Vuelos Nacionales y <strong>{{ num_internacionales }}</strong> Vuelos Internacionales.
+        </p>
+    </div>
+
+    <div class="stat">
+        <h2>Precio Promedio (Vuelos Nacionales)</h2>
+        <p>
+            El precio promedio de los vuelos nacionales es: <strong>${{ promedio_nacional|floatformat:0 }}</strong>
+        </p>
+    </div>
+
+    <a href="{% url 'inicio' %}" class="back-link">Volver al inicio</a>
+</body>
+</html>
